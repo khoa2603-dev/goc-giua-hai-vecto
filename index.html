@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Góc giữa hai vectơ – Hoạt động tương tác Toán 10 (Hình 5.41)</title>
+  <meta name="description" content="Khám phá định nghĩa và cách xác định góc giữa hai vectơ qua tương tác trực quan: 4 trường hợp ở Hình 5.41 SGK Toán 10.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=STIX+Two+Text:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M6 26L26 26M6 26L22 8' stroke='%23145f50' stroke-width='3.2' stroke-linecap='round'/><path d='M14 26 A 8 8 0 0 0 11.5 20.3' fill='none' stroke='%23f39c12' stroke-width='2.6'/></svg>">
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-sheen" aria-hidden="true"></div>
+
+  <div class="page">
+    <!-- ===== Header ===== -->
+    <header class="lesson card">
+      <div class="lesson-top">
+        <div class="lesson-title-box">
+          <div class="lesson-badge-subject">TOÁN 10 — HÌNH HỌC TRỰC QUAN</div>
+          <h1 class="lesson-title">
+            <span class="lesson-num">1.</span> GÓC GIỮA HAI VECTƠ <span class="math-render" data-math="(\overrightarrow{a}, \overrightarrow{b})">(\overrightarrow{a}, \overrightarrow{b})</span>
+          </h1>
+          <p class="lesson-desc">Khám phá cách xác định số đo góc giữa hai vectơ bằng cách tịnh tiến về chung điểm gốc <span class="math-render" data-math="O">O</span> bất kì</p>
+        </div>
+
+        <div class="header-actions">
+          <span class="author-badge">
+            <svg viewBox="0 0 24 24" class="author-icon" aria-hidden="true"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z" fill="currentColor"/></svg>
+            Make by <strong class="author-name">Nguyễn Thành Khoa</strong>
+          </span>
+          <button class="icon-btn" id="btn-sound" title="Bật/tắt âm thanh" aria-label="Bật/tắt âm thanh">
+            <svg class="ic-on" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="ic-off" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <button class="icon-btn" id="btn-fullscreen" title="Toàn màn hình (F11)" aria-label="Toàn màn hình">
+            <svg class="ic-fs-enter" viewBox="0 0 24 24"><path d="M3 9V3h6M21 9V3h-6M3 15v6h6M21 15v6h-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="ic-fs-exit" viewBox="0 0 24 24"><path d="M9 3v6H3M15 3v6h6M9 21v-6H3M15 21v-6h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hướng dẫn mục tiêu bài học -->
+      <div class="hd-guide-box">
+        <span class="guide-tag">Mục tiêu:</span>
+        <span>Từ một điểm <span class="math-render" data-math="O">O</span> bất kì trên lưới, <b>em hãy trực tiếp kéo hoặc click dời</b> hai vectơ <span class="math-render" data-math="\overrightarrow{a}">\overrightarrow{a}</span> và <span class="math-render" data-math="\overrightarrow{b}">\overrightarrow{b}</span> về chung điểm gốc <span class="math-render" data-math="O">O</span> để khám phá và xác định góc giữa chúng!</span>
+      </div>
+    </header>
+
+    <!-- ==================== KHÁM PHÁ GÓC GIỮA HAI VECTƠ (HÌNH 5.41 SGK) ==================== -->
+    <div class="main-workspace-view">
+      <main class="workspace">
+        <!-- Bảng tương tác SVG -->
+        <section class="board-card card" aria-label="Bảng tương tác Hình 5.41">
+          <div class="board-head">
+            <div class="legend">
+              <span class="chip chip-a"><i></i>vectơ <span class="math-render" data-math="\overrightarrow{a}">\overrightarrow{a}</span></span>
+              <span class="chip chip-b"><i></i>vectơ <span class="math-render" data-math="\overrightarrow{b}">\overrightarrow{b}</span></span>
+              <span class="chip chip-o"><i></i>điểm gốc <span class="math-render" data-math="O">O</span></span>
+              <span class="chip chip-s" id="legend-angle-chip" hidden><i></i>góc <span class="math-render" data-math="(\overrightarrow{a}, \overrightarrow{b})">(\overrightarrow{a}, \overrightarrow{b})</span></span>
+            </div>
+            <span class="progress-badge" id="step-counter-badge">Bước 1/2</span>
+          </div>
+
+          <div class="board-wrap">
+            <svg id="board-hd1" viewBox="0 0 840 520" role="img" aria-label="Bảng tương tác HĐ1"></svg>
+          </div>
+
+          <div class="board-bottom-bar">
+            <div class="board-tools-left">
+              <button class="tool-toggle-btn active" id="btn-toggle-grid" title="Bật/tắt lưới ô vuông">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M3 3h4v4H3zm6 0h6v4H9zm8 0h4v4h-4zM3 9h4v6H3zm6 0h6v6H9zm8 0h4v6h-4zM3 17h4v4H3zm6 0h6v4H9zm8 0h4v4h-4z"/></svg>
+                <span>Lưới ô vuông</span>
+              </button>
+              <button class="tool-toggle-btn active" id="btn-toggle-labels" title="Bật/tắt nhãn tên điểm">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 4h16v3H4zm0 6h10v3H4zm0 6h16v3H4z"/></svg>
+                <span>Nhãn điểm &amp; Vectơ</span>
+              </button>
+              <button class="tool-toggle-btn" id="btn-toggle-protractor" title="Bật/tắt thước đo độ tại điểm O">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17a9 9 0 0 1 18 0H3z"/><circle cx="12" cy="17" r="1.5"/></svg>
+                <span>Thước đo độ ảo</span>
+              </button>
+            </div>
+            <div class="board-tools-right">
+              <span class="board-status-hint">📍 <i>Kéo hoặc click điểm O đến bất cứ đâu: Số đo góc vẫn giữ nguyên!</i></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bảng điều khiển & Kết quả hình học -->
+        <aside class="panel card" aria-label="Thao tác & Kết quả">
+          <div class="panel-section-title">
+            <span class="badge-round">1</span>
+            <span>Chọn trường hợp trong Hình 5.41:</span>
+          </div>
+
+          <div class="case-selector-grid">
+            <button class="case-btn active" data-case="1">
+              <span class="case-btn-top">
+                <span class="case-btn-num">TH 1</span>
+                <span class="case-tag tag-obtuse">135° (Góc tù)</span>
+              </span>
+              <span class="case-btn-txt">Vectơ xiên 45° &amp; Thẳng đứng</span>
+            </button>
+
+            <button class="case-btn" data-case="2">
+              <span class="case-btn-top">
+                <span class="case-btn-num">TH 2</span>
+                <span class="case-tag tag-right">90° (Vuông góc)</span>
+              </span>
+              <span class="case-btn-txt">Tam giác cân: Đường cao &amp; Đáy</span>
+            </button>
+
+            <button class="case-btn" data-case="3">
+              <span class="case-btn-top">
+                <span class="case-btn-num">TH 3</span>
+                <span class="case-tag tag-collinear">0° (Cùng hướng)</span>
+              </span>
+              <span class="case-btn-txt">Hai vectơ cùng hướng</span>
+            </button>
+
+            <button class="case-btn" data-case="4">
+              <span class="case-btn-top">
+                <span class="case-btn-num">TH 4</span>
+                <span class="case-tag tag-opposite">180° (Ngược hướng)</span>
+              </span>
+              <span class="case-btn-txt">Hai vectơ ngược hướng</span>
+            </button>
+          </div>
+
+          <div class="panel-divider"></div>
+
+          <div class="panel-section-title">
+            <span class="badge-round">2</span>
+            <span>Các bước thực hiện (SGK Toán 10):</span>
+          </div>
+
+          <div class="step-action-buttons">
+            <button class="btn-step active-step" id="btn-step1">
+              <div class="btn-step-num">1</div>
+              <div class="btn-step-content">
+                <div class="btn-step-main">Bước 1: Vẽ <span class="math-render" data-math="\overrightarrow{OA} = \overrightarrow{a}">\overrightarrow{OA} = \overrightarrow{a}</span> và <span class="math-render" data-math="\overrightarrow{OB} = \overrightarrow{b}">\overrightarrow{OB} = \overrightarrow{b}</span></div>
+                <div class="btn-step-sub">Kéo thả <span class="math-render" data-math="\overrightarrow{a}, \overrightarrow{b}">\overrightarrow{a}, \overrightarrow{b}</span> về chung gốc <span class="math-render" data-math="O">O</span> (hoặc nhấn để dời)</div>
+              </div>
+              <svg viewBox="0 0 24 24" class="btn-step-arrow"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+
+            <button class="btn-step" id="btn-step2" disabled>
+              <div class="btn-step-num">2</div>
+              <div class="btn-step-content">
+                <div class="btn-step-main">Bước 2: Xác định số đo góc <span class="math-render" data-math="\widehat{AOB}">\widehat{AOB}</span></div>
+                <div class="btn-step-sub">Thước đo độ tự động căn khớp và quét đo góc từ <span class="math-render" data-math="0^\circ">0^\circ</span> đến <span class="math-render" data-math="180^\circ">180^\circ</span></div>
+              </div>
+              <svg viewBox="0 0 24 24" class="btn-step-arrow"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <!-- Hộp kết quả đo & phân tích hình học thuần túy -->
+          <div class="analysis-box card-sub" id="analysis-box">
+            <div class="analysis-header">
+              <span class="analysis-badge">📐 KẾT QUẢ GÓC GIỮA HAI VECTƠ</span>
+              <span class="angle-val-highlight" id="angle-val-badge">...</span>
+            </div>
+
+            <div class="analysis-main-row">
+              <span class="row-label">Góc đo được:</span>
+              <span class="row-val-angle" id="text-angle-formula"><span class="math-render" data-math="\widehat{AOB} = (\overrightarrow{a}, \overrightarrow{b}) = \dots">\widehat{AOB} = (\overrightarrow{a}, \overrightarrow{b}) = \dots</span></span>
+            </div>
+
+            <div class="analysis-main-row">
+              <span class="row-label">Phân loại góc:</span>
+              <span class="angle-kind-pill" id="text-angle-kind">Đang chờ thực hiện...</span>
+            </div>
+
+            <div class="analysis-comment-card" id="analysis-comment">
+              Nhấn <b>Bước 1</b> rồi <b>Bước 2</b> để xem mô phỏng và số đo góc chi tiết.
+            </div>
+
+            <div class="key-takeaway-banner">
+              <span class="takeaway-icon">💡</span>
+              <span class="takeaway-text"><b>Ghi nhớ:</b> Số đo góc hoàn toàn <b>không phụ thuộc</b> vào vị trí chọn điểm gốc <span class="math-render" data-math="O">O</span>!</span>
+            </div>
+          </div>
+
+          <!-- Nút đặt lại & Xem chuyển động mẫu -->
+          <div class="sim-actions-grid">
+            <button class="btn-auto-demo" id="btn-auto-demo">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Xem hoạt họa mẫu</span>
+            </button>
+            <button class="btn-reset" id="btn-reset-hd1">
+              <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v5h5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Đặt lại</span>
+            </button>
+          </div>
+        </aside>
+      </main>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="vendor/katex/katex.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
